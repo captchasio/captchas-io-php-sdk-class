@@ -21,5 +21,5 @@ The easiest way to quickly integrate [CAPTCHAs.IO] captcha solving service into 
 	
 ?>
 ```
+
 [CAPTCHAs.IO]: https://captchas.io
-[CAPTCHAs.IO sofware catalog]: https://captchas.io/software

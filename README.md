@@ -5,20 +5,19 @@ The easiest way to quickly integrate [CAPTCHAs.IO] captcha solving service into 
 ```php
 <?php
 
-	require_once('captchasio.php');
+	require_once('captchasio.class.php');
 
-	$api = new CAPTCHASIO('<MY_API_KEY>');
-	$api->buildCaptcha('6Le85AAaAAAAAA6OYetdaV2nOlahkOZc03cjztcH', 'https://captchas.io/recaptcha', 'userrecaptcha', 'v3', '1');
-	
-	$captcha_id = $api->solve_recaptcha();
-	$token = $api->get_recaptcha($captcha_id);
-		
-	while ($token == 'CAPCHA_NOT_READY') {
-		$token = $api->get_recaptcha($captcha_id);
-	}
+	// recaptcha
+	$api = new CAPTCHASIO ('<MY_API_KEY>');
+	$token = $api->recaptcha ('6Le85AAaAAAAAA6OYetdaV2nOlahkOZc03cjztcH', 'https://captchas.io/recaptcha');	
 	
 	print $token;
+
+	// image 
+	$api = new CAPTCHASIO ('<MY_API_KEY>');
+	$answer = $api->image('example/image_captcha_file.png');
 	
+	print $answer;
 ?>
 ```
 
